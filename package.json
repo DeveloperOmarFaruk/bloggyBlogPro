@@ -1,0 +1,24 @@
+{
+    "name": "bloggyBlogPro",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "deploy": "gh-pages -d src"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DeveloperOmarFaruk/bloggyBlogPro.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "homepage": "https://DeveloperOmarFaruk.github.io/bloggyBlogPro",
+    "bugs": {
+        "url": "https://github.com/DeveloperOmarFaruk/bloggyBlogPro/issues"
+    },
+    "homepage": "https://github.com/DeveloperOmarFaruk/bloggyBlogPro#readme",
+    "dependencies": {
+        "gh-pages": "^3.2.3"
+    }
+}

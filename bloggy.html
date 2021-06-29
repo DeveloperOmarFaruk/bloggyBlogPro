@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloggy | Developer.OmarFaruk</title>
+    <!--========================== Favicon ===========================-->
+    <link rel="shortcut icon" href="data:image/png;base64,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"
+        type="image/x-icon">
+    <!--========================== Tailwind CSS cdn ===========================-->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <!--========================== Boxicons ===========================-->
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!--========================== FontAwesome ===========================-->
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+
+</head>
+
+<body class="bg-gray-100">
+    <main class="bg-white md:ml-28 md:mr-28 h-full md:shadow-md">
+        <!--================================= Header Section Start================================-->
+        <header>
+
+            <!--====================First Nav Section Start===================-->
+            <nav class="flex items-center border-b ">
+                <ul class="flex font-medium text-sm md:ml-4 invisible md:visible">
+                    <li class="md:p-2">Home</li>
+                    <li class="md:p-2">About</li>
+                    <li class="md:p-2">Contact</li>
+                </ul>
+
+                <div class="icon text-base  md:p-2 space-x-4 md:pl-96 md:ml-96 ml-8 p-2 pl-4">
+                    <a href=""><i class='bx bxl-facebook'></i></a>
+                    <a href=""><i class='bx bxl-twitter'></i></a>
+                    <a href=""><i class='bx bxl-instagram'></i></a>
+                    <a href=""><i class='bx bxl-pinterest'></i></a>
+                </div>
+
+            </nav>
+
+            <!--====================First Nav Section End===================-->
+
+
+            <!--====================Logo Nav Section Start===================-->
+            <logo class="flex justify-center border-b">
+                <img class="p-5 md:p-9 md:pb-14" src="https://1.bp.blogspot.com/-Qdu5QBUTc5I/YAVxpjs3J9I/AAAAAAAAGRw/v8jU3jM23z8f7BXOraTqs-syeEBbx7a9ACK4BGAYYCw/s1600/output-onlinepngtools_1_3_140x50.png" alt="">
+            </logo>
+            <!--====================Logo Nav Section End===================-->
+
+
+            <!--====================Second Nav Section Start===================-->
+            <nav class=" border-b ">
+
+
+
+
+
+                <ul class="flex justify-center text-xs font-medium  bg-red-500 md:bg-white">
+
+                    <!--====================HOME===================-->
+                    <li class="p-4 pl-6 md:pl-0 text-white md:text-black  ">HOME</li>
+
+
+                    <!--====================FEATURES===================-->
+                    <div class="group inline-block  text-xs font-medium md:visible invisible">
+                        <button class="outline-none focus:outline-none md:p-4  bg-white rounded-sm flex items-center ">
+                            <span class="pr-1 font-medium flex-1 ">FEATURES</span>
+                            <span>
+                            <svg
+                            class="fill-current h-4 w-4 transform group-hover:-rotate-180 
+                            transition duration-150 ease-in-out"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20">
+                            <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                            </svg>
+                            </span>
+                        </button>
+
+
+
+
+                        <ul class="bg-white  transform scale-0 group-hover:scale-100 absolute z-50
+                            transition duration-150 ease-in-out origin-top md:w-48 shadow-lg">
+
+                            <li class=" relative px-3 py-1 ">
+                                <button class="w-full text-left flex items-center outline-none focus:outline-none text-xs font-medium hover:text-red-400">
+                                        <span class="py-2 px-2  flex-1 ">MULTI DROPDOWN</span>
+                                        <span class="mr-auto">
+                                        <svg
+                                        class="fill-current h-4 w-4 hover:text-red-400
+                                        transition duration-150 ease-in-out"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                    </svg>
+                                    </span>
+                                    </button>
+
+
+
+                                <ul class="bg-white absolute top-0 right-0.5 
+                                transition duration-150 ease-in-out origin-top-left 
+                                md:w-48 shadow-lg">
+                                    <li class="py-2 px-4  hover:text-red-400">DROPDOWN 1</li>
+                                    <li class="relative px-3 py-2">
+                                        <button class="w-full text-left flex items-center outline-none focus:outline-none hover:text-red-400 text-xs font-medium">
+                                        <span class="py-2 px-1  flex-1 ">DROPDOWN 2</span>
+                                        <span class="mr-auto">
+                                        <svg
+                                        class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20">
+                                        <path
+                                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                        </svg>
+                                        </span>
+                                        </button>
+                                        <ul class="bg-white  absolute top-0 right-0.5 transition duration-150 ease-in-out origin-top-left
+                                        md:w-44 shadow-lg">
+                                            <li class="py-3 px-7  hover:text-red-400">SUB DROPDOWN 1</li>
+                                            <li class="py-3 px-7 hover:text-red-400">SUB DROPDOWN 2</li>
+                                        </ul>
+                                    </li>
+                                    <li class="py-2 px-4  hover:text-red-400">DROPDOWN 3</li>
+
+                                </ul>
+                            </li>
+
+
+
+                            <li class="rounded-sm px-5 py-3 hover:text-red-400">SHORT CODES</li>
+                            <li class="rounded-sm px-5 py-3 hover:text-red-400">SITE MAP</li>
+                            <li class="rounded-sm px-5 py-3  hover:text-red-400">ERROR PAGE</li>
+                        </ul>
+                    </div>
+
+
+
+                    <!--====================MEGA MENU===================-->
+                    <div class="group inline-block  text-xs font-medium md:visible invisible ">
+                        <button class="md:p-4  bg-white  flex items-center ">
+                        <span class="pr-1 font-medium flex-1 ">MEGA MENU</span>
+                            <span class="md:visible  invisible">
+                                <svg
+                                class="fill-current h-4 w-4 transform group-hover:-rotate-180 
+                                transition duration-150 ease-in-out"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20">
+                                <path
+                                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                </svg>
+                            </span>
+                        </button>
+
+
+
+
+                        <ul class="bg-white  transform scale-0 group-hover:scale-100 absolute -ml-96 mr-36 z-50
+                        transition duration-150 ease-in-out origin-top  md:w-auto md:h-auto shadow-lg flex justify-items-start ">
+                            <div class="pl-4 pt-4 pb-4 pr-2">
+                                <div class="hover:opacity-90 hover:text-red-600">
+                                    <div class="relative ">
+                                        <img class="img-fluid  h-36 w-64" src="https://1.bp.blogspot.com/-GwhtXvR9cCU/X_2jhHmqVNI/AAAAAAAAGOA/gzHoRYn17EsAL7DkwEGMaXKw5le_x8c_QCLcBGAsYHQ/w680/111%2B%25281%2529.jpg" alt="">
+
+                                        <div class="absolute inset-0 mt-1">
+                                            <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">BEAUTY</span>
+                                        </div>
+                                    </div>
+                                    <li class="  text-base pt-2">Beautiful vintage aircraft</li>
+                                </div>
+                                <li class=" pt-2"><i class='bx bx-time-five text-red-500'></i>JANUARY 26, 2021</li>
+                            </div>
+
+
+
+
+                            <div class="pl-4 pt-4 pb-4 pr-2">
+                                <div class="hover:opacity-90 hover:text-red-600">
+                                    <div class="relative ">
+                                        <img class="img-fluid  h-36 w-64" src="https://1.bp.blogspot.com/--vR7QuVKMU0/X_2jhcRd4_I/AAAAAAAAGOE/FpTV56OMSEYDDC1aOQLE8L2QrX8uQgD_gCLcBGAsYHQ/w680/112%2B%25281%2529.jpeg" alt="">
+
+                                        <div class="absolute inset-0 mt-1">
+                                            <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">FASHION</span>
+                                        </div>
+                                    </div>
+                                    <li class="  text-base pt-2">Elegant woman in front of<br> a waterfall</li>
+                                </div>
+                                <li class=" pt-2"><i class='bx bx-time-five text-red-500'></i>MARCH 17, 2020</li>
+                            </div>
+
+
+
+
+                            <div class="pl-4 pt-4 pb-4 pr-2">
+                                <div class="hover:opacity-90 hover:text-red-600">
+                                    <div class="relative ">
+                                        <img class="img-fluid  h-36 w-64" src="https://1.bp.blogspot.com/-g7nmAo80d0Q/X_2jhJEZhqI/AAAAAAAAGN8/ClMy7BtUeyQd7ePNCAVWq-4gM-l0VUkKQCLcBGAsYHQ/w680/113%2B%25281%2529.jpeg" alt="">
+
+                                        <div class="absolute inset-0 mt-1">
+                                            <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">BUSINESS</span>
+                                        </div>
+                                    </div>
+                                    <li class="  text-base pt-2">Elegant business man having a<br> delicious cup of coffee</li>
+                                </div>
+                                <li class=" pt-2"><i class='bx bx-time-five text-red-500'></i>APRIL 17, 2019</li>
+                            </div>
+
+
+
+
+
+                            <div class="pl-4 pt-4 pb-4 pr-3">
+                                <div class="hover:opacity-90 hover:text-red-600">
+                                    <div class="relative ">
+                                        <img class="img-fluid  h-36 w-64" src="https://1.bp.blogspot.com/-lEzsYY6JcIM/X_2jiPVT5HI/AAAAAAAAGOI/qmmaFpVCcyoLrHrgnxGmD7fUyIfN9DdZwCLcBGAsYHQ/w680/114%2B%25281%2529.jpeg" alt="">
+
+                                        <div class="absolute inset-0 mt-1">
+                                            <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">LEARN</span>
+                                        </div>
+                                    </div>
+                                    <li class="  text-base pt-2">Left sidebar post</li>
+                                </div>
+                                <li class=" pt-2"><i class='bx bx-time-five text-red-500'></i>JUNE 18, 2018</li>
+                            </div>
+
+
+                        </ul>
+
+                    </div>
+
+
+
+
+                    <!--====================DOCUMENTATION===================-->
+                    <div class="group block  text-xs font-medium md:visible invisible">
+                        <button class="outline-none focus:outline-none md:p-4  bg-white rounded-sm flex items-center ">
+                        <span class="pr-1 font-medium flex-1 ">DOCUMENTATION</span>
+                            <span>
+                                <svg
+                                class="fill-current h-4 w-4 transform group-hover:-rotate-180 
+                                transition duration-150 ease-in-out"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20">
+                                <path
+                                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <ul class="bg-white  transform scale-0 group-hover:scale-100 absolute z-50 
+                        transition duration-150 ease-in-out origin-top md:w-48 shadow-lg">
+                            <li class="rounded-sm px-5 py-3 hover:text-red-400">WEB DOCUMENTATION</li>
+                            <li class="rounded-sm px-5 py-3 hover:text-red-400">VIDEO DOCUMENTATION</li>
+                        </ul>
+                    </div>
+
+
+
+                    <!--====================DOWNLOAD THIS TEMPLATE===================-->
+                    <li class="md:p-4 flex justify-center md:visible invisible">DOWNLOAD THIS TEMPLATE</li>
+                </ul>
+
+
+                <style>
+                    li>ul {
+                        transform: translatex(100%) scale(0)
+                    }
+                    
+                    li:hover>ul {
+                        transform: translatex(101%) scale(1)
+                    }
+                    
+                    li>button svg {
+                        transform: rotate(-90deg)
+                    }
+                    
+                    li:hover>button svg {
+                        transform: rotate(-270deg)
+                    }
+                    
+                    .group:hover .group-hover\:scale-100 {
+                        transform: scale(1)
+                    }
+                    
+                    .group:hover .group-hover\:-rotate-180 {
+                        transform: rotate(180deg)
+                    }
+                    
+                    .scale-0 {
+                        transform: scale(0)
+                    }
+                    
+                    .min-w-32 {
+                        min-width: 8rem
+                    }
+                </style>
+            </nav>
+            <!--====================Second Nav Section End===================-->
+
+        </header>
+
+        <!--================================= Header Section End ================================-->
+
+
+
+
+        <!--================================= Main Section Start ================================-->
+        <blog class="">
+
+            <div class="md:flex justify-items-start ">
+
+
+                <!--================================= Blog Left Side ================================-->
+                <div class="md:w-4/6 md:ml-6 ml-5 mt-12 md:mr-6 mr-5 h-full">
+                    <!--==================================1st Blog=======================-->
+                    <div class="mb-44">
+                        <div class="relative hover:opacity-90  ">
+                            <img class="img-fluid  h-80 w-full" src="https://1.bp.blogspot.com/-GwhtXvR9cCU/X_2jhHmqVNI/AAAAAAAAGOA/gzHoRYn17EsAL7DkwEGMaXKw5le_x8c_QCLcBGAsYHQ/w680/111%2B%25281%2529.jpg" alt="">
+
+                            <div class="absolute inset-0 ">
+                                <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">BEAUTY</span>
+                            </div>
+
+
+                            <div class="bg-white ml-6 mr-6  -bottom-36 absolute ">
+                                <div class="p-4 w-full ">
+                                    <ul>
+
+                                        <li class="hover:text-red-600 text-xl font-medium"><a href="">Beautiful vintage aircraft</a></li>
+                                        <li class=" pt-4 text-gray-700">
+                                            <p class="text-xs font-medium pb-2"><i class='bx bxs-user text-red-600 pr-1'></i>SORA BLOGGING TIPS <i class='bx bx-time text-red-600 pl-4 pr-1'></i> MARCH 18, 2016</p>
+                                            <p class="text-sm">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown<br> printer took a galley of type and scramb...</p>
+                                        </li>
+                                        <li class="pt-2">
+                                            <a class="text-red-600 hover:text-black inline-flex items-center">Learn More
+                                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--==================================2nd Blog=======================-->
+                    <div class="mb-44">
+                        <div class="relative hover:opacity-90  ">
+                            <img class="img-fluid  h-80 w-full" src="https://1.bp.blogspot.com/--vR7QuVKMU0/X_2jhcRd4_I/AAAAAAAAGOE/FpTV56OMSEYDDC1aOQLE8L2QrX8uQgD_gCLcBGAsYHQ/w680/112%2B%25281%2529.jpeg" alt="">
+
+                            <div class="absolute inset-0 ">
+                                <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">FASHION</span>
+                            </div>
+
+                            <div class="bg-white ml-6 mr-6 -bottom-36 absolute  ">
+                                <div class="p-4 w-full  ">
+                                    <ul>
+
+                                        <li class="hover:text-red-600 text-xl font-medium"><a href="">Elegant woman in front of a waterfall</a></li>
+                                        <li class=" pt-4 text-gray-700">
+                                            <p class="text-xs font-medium pb-2"><i class='bx bxs-user text-red-600 pr-1'></i>SORA BLOGGING TIPS <i class='bx bx-time text-red-600 pl-4 pr-1'></i> MARCH 18, 2016</p>
+                                            <p class="text-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever...</p>
+                                        </li>
+                                        <li class="pt-2">
+                                            <a class="text-red-600 hover:text-black inline-flex items-center">Learn More
+                                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!--==================================3rd Blog=======================-->
+                    <div class="mb-44">
+                        <div class="relative hover:opacity-90  ">
+                            <img class="img-fluid  h-80 w-full" src="https://1.bp.blogspot.com/-g7nmAo80d0Q/X_2jhJEZhqI/AAAAAAAAGN8/ClMy7BtUeyQd7ePNCAVWq-4gM-l0VUkKQCLcBGAsYHQ/w680/113%2B%25281%2529.jpeg" alt="">
+
+                            <div class="absolute inset-0 ">
+                                <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">PEOPLE</span>
+                            </div>
+
+
+                            <div class="bg-white ml-6 mr-6  -bottom-36 absolute  ">
+                                <div class="p-4 w-full ">
+                                    <ul>
+
+                                        <li class="hover:text-red-600 text-xl font-medium"><a href="">Elegant business man having a delicious cup of coffee</a></li>
+                                        <li class=" pt-4 text-gray-700">
+                                            <p class="text-xs font-medium pb-2"><i class='bx bxs-user text-red-600 pr-1'></i>SORA BLOGGING TIPS <i class='bx bx-time text-red-600 pl-4 pr-1'></i> MARCH 18, 2016</p>
+                                            <p class="text-sm">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown<br> printer took a galley of type and scramb...</p>
+                                        </li>
+                                        <li class="pt-2">
+                                            <a class="text-red-600 hover:text-black inline-flex items-center">Learn More
+                                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--==================================4th Blog=======================-->
+                    <div class="mb-44">
+                        <div class="relative hover:opacity-90  ">
+                            <img class="img-fluid  h-80 w-full" src="https://1.bp.blogspot.com/-lEzsYY6JcIM/X_2jiPVT5HI/AAAAAAAAGOI/qmmaFpVCcyoLrHrgnxGmD7fUyIfN9DdZwCLcBGAsYHQ/w680/114%2B%25281%2529.jpeg" alt="">
+
+                            <div class="absolute inset-0 ">
+                                <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">LEARN</span>
+                            </div>
+
+
+                            <div class="bg-white ml-6 mr-6  -bottom-36 absolute  ">
+                                <div class="p-4 w-full ">
+                                    <ul>
+
+                                        <li class="hover:text-red-600 text-xl font-medium"><a href="">Left sidebar post</a></li>
+                                        <li class=" pt-4 text-gray-700">
+                                            <p class="text-xs font-medium pb-2"><i class='bx bxs-user text-red-600 pr-1'></i>SORA BLOGGING TIPS <i class='bx bx-time text-red-600 pl-4 pr-1'></i> MARCH 18, 2016</p>
+                                            <p class="text-sm">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown<br> printer took a galley of type and scramb...</p>
+                                        </li>
+                                        <li class="pt-2">
+                                            <a class="text-red-600 hover:text-black inline-flex items-center">Learn More
+                                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--==================================5th Blog=======================-->
+                    <div class="mb-44">
+                        <div class="relative hover:opacity-90  ">
+                            <img class="img-fluid  h-80 w-full" src="https://1.bp.blogspot.com/-H2nMS8GL2Gs/X_2jiWvwC5I/AAAAAAAAGOM/zYOUkuu3iDwRRlqkBJM1gyC7xTbaAY6MwCLcBGAsYHQ/w680/115%2B%25281%2529.jpeg" alt="">
+
+                            <div class="absolute inset-0 ">
+                                <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">FASHION</span>
+                            </div>
+
+
+
+
+                            <div class="bg-white ml-6 mr-6  -bottom-36 absolute  ">
+                                <div class="p-4 w-full ">
+                                    <ul>
+
+                                        <li class="hover:text-red-600 text-xl font-medium"><a href="">Fashion and beautiful backpack</a></li>
+                                        <li class=" pt-4 text-gray-700">
+                                            <p class="text-xs font-medium pb-2"><i class='bx bxs-user text-red-600 pr-1'></i>SORA BLOGGING TIPS <i class='bx bx-time text-red-600 pl-4 pr-1'></i> MARCH 18, 2016</p>
+                                            <p class="text-sm">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown<br> printer took a galley of type and scramb...</p>
+                                        </li>
+                                        <li class="pt-2">
+                                            <a class="text-red-600 hover:text-black inline-flex items-center">Learn More
+                                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--==================================6th Blog=======================-->
+                    <div class="mb-44">
+                        <div class="relative hover:opacity-90  ">
+                            <img class="img-fluid  h-80 w-full" src="https://1.bp.blogspot.com/-kOAKDGLjgWs/X_2jivrlQ4I/AAAAAAAAGOQ/1eutoWcQWS0TczBBDW26gRfeHHGXA5HYQCLcBGAsYHQ/w680/116%2B%25281%2529.jpeg" alt="">
+
+                            <div class="absolute inset-0 ">
+                                <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">NATURE</span>
+                            </div>
+
+
+
+                            <div class="bg-white ml-6 mr-6  -bottom-36 absolute  ">
+                                <div class="p-4 w-full ">
+                                    <ul>
+
+                                        <li class="hover:text-red-600 text-xl font-medium"><a href="">Small bridge and a beautiful view of the beach</a></li>
+                                        <li class=" pt-4 text-gray-700">
+                                            <p class="text-xs font-medium pb-2"><i class='bx bxs-user text-red-600 pr-1'></i>SORA BLOGGING TIPS <i class='bx bx-time text-red-600 pl-4 pr-1'></i> MARCH 18, 2016</p>
+                                            <p class="text-sm">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown<br> printer took a galley of type and scramb...</p>
+                                        </li>
+                                        <li class="pt-2">
+                                            <a class="text-red-600 hover:text-black inline-flex items-center">Learn More
+                                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--==================================7th Blog=======================-->
+                    <div class="mb-48 ">
+                        <div class="relative hover:opacity-90  ">
+                            <img class="img-fluid  h-80 w-full" src="https://1.bp.blogspot.com/-Zt-CwzBqJ_M/X_2ji0cUrSI/AAAAAAAAGOU/bbO3tmPIjQofplup4nOdyP2FUIzwqfjrgCLcBGAsYHQ/w680/117%2B%25281%2529.jpg" alt="">
+
+                            <div class="absolute inset-0 ">
+                                <span class="bg-red-500 text-white text-sm w-20 p-1  text-center  ">PHOTOGRAPHY</span>
+                            </div>
+
+
+
+
+                            <div class="bg-white ml-6 mr-6  -bottom-36  absolute ">
+                                <div class="p-4 w-full ">
+                                    <ul>
+
+                                        <li class="hover:text-red-600 text-xl font-medium"><a href="">Girl with camera style vintage</a></li>
+                                        <li class=" pt-4 text-gray-700">
+                                            <p class="text-xs font-medium pb-2"><i class='bx bxs-user text-red-600 pr-1'></i>SORA BLOGGING TIPS <i class='bx bx-time text-red-600 pl-4 pr-1'></i> MARCH 18, 2016</p>
+                                            <p class="text-sm">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown<br> printer took a galley of type and scramb...</p>
+                                        </li>
+                                        <li class="pt-2">
+                                            <a class="text-red-600 hover:text-black inline-flex items-center">Learn More
+                                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!--==================================Blog Pagination=======================-->
+                    <div class="flex flex-col items-items-start my-5 border-t">
+                        <div class="flex text-gray-700">
+                            <div class="flex h-8 font-medium text-center">
+                                <div class="w-8 md:flex justify-center items-center  cursor-pointer leading-5 transition duration-150 ease-in  rounded-none bg-red-600 text-white  mr-2 pt-1 md:pt-0 ">1</div>
+                                <div class="w-8 md:flex justify-center items-center   cursor-pointer leading-5 transition duration-150 ease-in  rounded-none bg-gray-200 text-black hover:bg-red-600 hover:text-white mr-2 pt-1 md:pt-0 ">2</div>
+                                <div class="w-8 md:flex justify-center items-center   cursor-pointer leading-5 transition duration-150 ease-in  rounded-none bg-gray-200 text-black hover:bg-red-600 hover:text-white mr-2 pt-1 md:pt-0">3</div>
+                                <div class="w-8 md:flex justify-center items-center   cursor-pointer leading-5 transition duration-150 ease-in  rounded-none bg-gray-200 text-black hover:bg-red-600 hover:text-white mr-1 pt-1 md:pt-0">4</div>
+
+
+                            </div>
+                            <div class="h-8 w-8 ml-1 flex justify-center items-center rounded-none md:bg-gray-200 md:text-black text-white bg-red-600 hover:bg-gray-200 hover:text-black md:hover:bg-red-600 md:hover:text-white cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right w-4 h-4">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--=====================================Blog Right Side==================================-->
+                <div class="md:w-2/6 md:ml-2 ml-5 md:mr-5 mr-8 mt-12 ">
+                    <div class="widget HTML sticky top-20" data-version="2" id="HTML5">
+
+                        <div class="mb-4">
+                            <p class="bg-red-500 p-2 w-32  text-center text-white rounded text-sm font-medium">SUBSCRIBE US</p>
+                        </div>
+
+
+                        <div class=" relative h-64  pb-2 pt-6 ">
+
+                            <iframe class="inset-0 w-full h-full  absolute" width="560" height="349" src="https://www.youtube.com/embed/gYa29rTnF28" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+
+                        <div class="mt-8">
+                            <p class="bg-red-500 p-2 w-32 text-center text-white rounded text-sm font-medium ">RECENT-POST</p>
+                        </div>
+
+
+                        <ul class="text-sm font-medium">
+                            <li class="border-b pt-8 pb-3 hover:text-red-500">
+                                <a href="">Beautiful vintage aircraft</a>
+                            </li>
+                            <li class="border-b pb-3 pt-3 hover:text-red-500">
+                                <a href="">Elegant woman in front of a waterfall</a>
+                            </li>
+                            <li class="border-b pb-3 pt-3 hover:text-red-500">
+                                <a href="">Elegant business man having a delicious cup of coffee</a>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8">
+                            <p class="bg-red-500 p-2 w-32 text-center text-white rounded text-sm font-medium">LABELS</p>
+                        </div>
+                        <ul class="text-sm font-medium">
+                            <li class="border-b pt-8 pb-3 hover:text-red-500">
+                                <a href="">Beauty</a>
+                            </li>
+                            <li class="border-b pb-3 pt-3 hover:text-red-500">
+                                <a href="">Business</a>
+                            </li>
+                            <li class="border-b pb-3 pt-3 hover:text-red-500">
+                                <a href="">Fashion</a>
+                            </li>
+                            <li class="border-b pb-3 pt-3 hover:text-red-500">
+                                <a href="">Food</a>
+                            </li>
+                            <li class=" pb-3 pt-3 hover:text-red-500">
+                                <a href="">Learn</a>
+                            </li>
+                        </ul>
+
+
+                        <div class="mt-8">
+                            <p class="bg-red-500 p-2 w-36 text-center text-white rounded text-sm font-medium">SEARCH THIS BLOG</p>
+                        </div>
+
+                        <div class="flex md:w-full  md:justify-start pt-8 pb-12 text-sm">
+                            <div class="relative md:w-full w-96  ">
+
+                                <input type="search" name="search" placeholder="Search this blog" class="w-full h-8 bg-gray-100 bg-opacity-50 rounded-l border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out ">
+                            </div>
+                            <button class="inline-flex bg-gray-200 border-0 h-8 pt-2  px-6 focus:outline-none hover:bg-black hover:text-white text-black rounded-r ">Search</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </blog>
+
+
+        <!--================================= Main Section End ================================-->
+
+
+
+        <!--================================= Footer Section Start ================================-->
+
+        <footer class="bg-gray-100 pt-4 md:pt-0">
+            <div class="md:flex justify-items-start  m-6">
+
+
+                <!--=================Footer Left Side=================-->
+                <div class="md:w-1/3 ">
+                    <div class="md:mt-8 ">
+                        <p class="bg-red-500 p-2 w-36 text-center text-white rounded text-sm font-medium">RECENT POSTS</p>
+                    </div>
+
+                    <div>
+                        <ul class="flex justify-items-start">
+                            <li class="pt-8 pb-4"><img class="w-24 h-16" src="https://1.bp.blogspot.com/-GwhtXvR9cCU/X_2jhHmqVNI/AAAAAAAAGOA/gzHoRYn17EsAL7DkwEGMaXKw5le_x8c_QCLcBGAsYHQ/w680/111%2B%25281%2529.jpg" alt=""></li>
+                            <li class="pt-6 pl-4">
+                                <a href="" class="text-sm font-medium hover:text-red-500">Beautiful vintage aircraft</a>
+                                <p class="text-xs pt-1 pb-2"><i class='bx bx-time text-red-600 '></i> MARCH 18, 2016</p>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <ul class="flex justify-items-start">
+                            <li class="pt-2 pb-2"><img class="w-24 h-16" src="https://1.bp.blogspot.com/--vR7QuVKMU0/X_2jhcRd4_I/AAAAAAAAGOE/FpTV56OMSEYDDC1aOQLE8L2QrX8uQgD_gCLcBGAsYHQ/w680/112%2B%25281%2529.jpeg" alt=""></li>
+                            <li class=" pl-4">
+                                <a href="" class="text-sm font-medium hover:text-red-500">Elegant woman in front of a waterfall</a>
+                                <p class="text-xs pt-1 pb-2"><i class='bx bx-time text-red-600 '></i> MARCH 18, 2016</p>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div>
+                        <ul class="flex justify-items-start">
+                            <li class="pt-4 pb-8"><img class="w-24 h-16" src="https://1.bp.blogspot.com/-g7nmAo80d0Q/X_2jhJEZhqI/AAAAAAAAGN8/ClMy7BtUeyQd7ePNCAVWq-4gM-l0VUkKQCLcBGAsYHQ/w680/113%2B%25281%2529.jpeg" alt=""></li>
+                            <li class="pt-2 pl-4">
+                                <a href="" class="text-sm font-medium hover:text-red-500">Elegant business man having a<br> delicious cup of coffee</a>
+                                <p class="text-xs pt-1 pb-2"><i class='bx bx-time text-red-600 '></i> MARCH 18, 2016</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!--=================Footer Middle Side=================-->
+                <div class="md:w-1/3">
+                    <div class="mt-8">
+                        <p class="bg-red-500 p-2 w-36 text-center text-white rounded text-sm font-medium">POPULAR-POSTS</p>
+                    </div>
+
+
+
+                    <div>
+                        <ul class="flex justify-items-start">
+                            <li class="pt-8 pb-4"><img class="w-24 h-16" src="https://1.bp.blogspot.com/-GwhtXvR9cCU/X_2jhHmqVNI/AAAAAAAAGOA/gzHoRYn17EsAL7DkwEGMaXKw5le_x8c_QCLcBGAsYHQ/w680/111%2B%25281%2529.jpg" alt=""></li>
+                            <li class="pt-6 pl-4">
+                                <a href="" class="text-sm font-medium hover:text-red-500">Beautiful vintage aircraft</a>
+                                <p class="text-xs pt-1 pb-2"><i class='bx bx-time text-red-600 '></i> MARCH 18, 2016</p>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <ul class="flex justify-items-start">
+                            <li class="pt-2 pb-2"><img class="w-24 h-16" src="https://1.bp.blogspot.com/--vR7QuVKMU0/X_2jhcRd4_I/AAAAAAAAGOE/FpTV56OMSEYDDC1aOQLE8L2QrX8uQgD_gCLcBGAsYHQ/w680/112%2B%25281%2529.jpeg" alt=""></li>
+                            <li class=" pl-4">
+                                <a href="" class="text-sm font-medium hover:text-red-500">Elegant woman in front of a waterfall</a>
+                                <p class="text-xs pt-1 pb-2"><i class='bx bx-time text-red-600 '></i> MARCH 18, 2016</p>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div>
+                        <ul class="flex justify-items-start">
+                            <li class="pt-4 pb-8"><img class="w-24 h-16" src="https://1.bp.blogspot.com/-g7nmAo80d0Q/X_2jhJEZhqI/AAAAAAAAGN8/ClMy7BtUeyQd7ePNCAVWq-4gM-l0VUkKQCLcBGAsYHQ/w680/113%2B%25281%2529.jpeg" alt=""></li>
+                            <li class="pt-2 pl-4">
+                                <a href="" class="text-sm font-medium hover:text-red-500">Elegant business man having a<br> delicious cup of coffee</a>
+                                <p class="text-xs pt-1 pb-2"><i class='bx bx-time text-red-600 '></i> MARCH 18, 2016</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!--=================Footer Right Side=================-->
+
+                <div class="md:w-1/3">
+                    <div class="mt-8">
+                        <p class="bg-red-500 p-2 w-40 text-center text-white rounded text-sm font-medium">RECENT IN FASHION</p>
+                    </div>
+
+
+
+                    <div>
+                        <ul class="flex justify-items-start">
+                            <li class="pt-8 pb-4"><img class="w-24 h-16" src="https://1.bp.blogspot.com/--vR7QuVKMU0/X_2jhcRd4_I/AAAAAAAAGOE/FpTV56OMSEYDDC1aOQLE8L2QrX8uQgD_gCLcBGAsYHQ/w680/112%2B%25281%2529.jpeg" alt=""></li>
+                            <li class="pt-6 pl-4">
+                                <a href="" class="text-sm font-medium hover:text-red-500">Elegant woman in front of a waterfall</a>
+                                <p class="text-xs pt-1 pb-2"><i class='bx bx-time text-red-600 '></i> MARCH 18, 2016</p>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <ul class="flex justify-items-start">
+                            <li class="pt-2 pb-2"><img class="w-24 h-16" src="https://1.bp.blogspot.com/-g7nmAo80d0Q/X_2jhJEZhqI/AAAAAAAAGN8/ClMy7BtUeyQd7ePNCAVWq-4gM-l0VUkKQCLcBGAsYHQ/w680/113%2B%25281%2529.jpeg" alt=""></li>
+                            <li class=" pl-4">
+                                <a href="" class="text-sm font-medium hover:text-red-500">Elegant business man having a<br> delicious cup of coffee</a>
+                                <p class="text-xs pt-1 pb-2"><i class='bx bx-time text-red-600 '></i> MARCH 18, 2016</p>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div>
+                        <ul class="flex justify-items-start">
+                            <li class="pt-4 pb-8"><img class="w-24 h-16" src="https://1.bp.blogspot.com/-H2nMS8GL2Gs/X_2jiWvwC5I/AAAAAAAAGOM/zYOUkuu3iDwRRlqkBJM1gyC7xTbaAY6MwCLcBGAsYHQ/w680/115%2B%25281%2529.jpeg" alt=""></li>
+                            <li class="pt-2 pl-4">
+                                <a href="" class="text-sm font-medium hover:text-red-500">Fashion and beautiful backpack</a>
+                                <p class="text-xs pt-1 pb-2"><i class='bx bx-time text-red-600 '></i> MARCH 18, 2016</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class=" text-xs pb-2 text-center">
+                <p class="">CREATED WITH <i class='bx bxs-heart text-red-500'></i> BY
+                    <p class="text-red-500 font-medium">DEVELOPER.OMAR FARUK</p>
+                </p>
+            </div>
+        </footer>
+
+
+        <!--================================= Footer Section End ================================-->
+
+        <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi commodi eaque, in dolorem quam ullam accusantium accusamus repellat excepturi alias quis maiores dolores eligendi expedita explicabo. Et ullam, expedita quibusdam ipsa sapiente sint
+            recusandae nisi, quidem maiores fugiat accusamus architecto. Blanditiis itaque fugit aspernatur perferendis alias repellat repellendus, nobis vitae eligendi magni quos dignissimos cum a placeat rem facere. Aliquam voluptas magnam quas molestiae
+            velit, doloribus vero praesentium esse explicabo dolores, officia hic. Voluptatem provident quae porro quas nam minima, doloremque ipsa facilis harum ab veritatis rerum nisi suscipit optio aperiam ipsam sit. Consequatur dolor esse itaque magni
+            doloremque quos modi cumque. Officiis dignissimos, ullam sed libero maxime quae consequatur labore at quos tenetur cumque eveniet consectetur. Dignissimos exercitationem asperiores iure ex quo voluptatum dolor veritatis vitae, explicabo libero
+            eveniet aliquam voluptate nisi. Molestiae saepe ex assumenda impedit expedita sint libero maxime, nam velit. Perspiciatis modi exercitationem aspernatur ut nulla eum porro reprehenderit suscipit repellat ratione sapiente officia voluptatibus
+            nemo nihil deleniti quasi est magnam praesentium eos officiis, autem quis eveniet. Asperiores recusandae, corrupti libero consequuntur veniam fugit, illum suscipit, possimus perferendis in quidem obcaecati provident illo ullam id temporibus
+            explicabo voluptas? Praesentium consequuntur hic aspernatur dolor iusto! Quas unde officiis culpa quisquam adipisci ullam consectetur non aperiam earum perspiciatis ut, dignissimos repellendus assumenda facere sit necessitatibus quam. Quam
+            aliquid ut excepturi facilis nesciunt delectus pariatur ex. Quaerat ex laboriosam consectetur necessitatibus repellendus illum ea architecto libero doloribus iure quos ducimus id sit ab unde iusto labore amet obcaecati, vero repellat, recusandae
+            autem asperiores. Eveniet vitae dolorum temporibus voluptas, itaque cumque fugit quaerat dicta omnis quos consequatur tempore, provident iure incidunt labore perspiciatis saepe! Quidem aliquam minima error qui a placeat veritatis, quaerat
+            quisquam sint pariatur adipisci accusamus fugiat laboriosam perferendis ipsam ratione sequi optio quod praesentium saepe neque, aliquid nesciunt repellat. Debitis vitae laudantium itaque incidunt et maxime animi, minus quasi dolores aut voluptatum
+            omnis est veritatis non molestiae, blanditiis, quidem provident. Nihil, dolores. Earum saepe nihil quod deleniti voluptas, officia explicabo at reiciendis placeat quibusdam itaque, eius doloremque voluptate assumenda eligendi esse sunt soluta
+            tempora sequi quam quidem minima. Minima sed numquam, culpa alias, aut praesentium, quidem consectetur quasi sapiente delectus deserunt? Sunt autem fugit nostrum consequuntur placeat reiciendis dicta a rem expedita perspiciatis vero, inventore
+            ex possimus! Placeat a laudantium minus deleniti totam illo delectus sequi quis molestias beatae! Reiciendis atque possimus quaerat aspernatur repudiandae! Quo dolorum ipsam veniam assumenda quidem, iusto, saepe illo obcaecati facere quisquam
+            fugit est rerum velit vel quae repellendus asperiores? Ea possimus hic porro, temporibus maxime obcaecati amet? Culpa debitis earum possimus ipsum tempore voluptate quasi vitae? Repellendus voluptatum qui veritatis numquam ipsa fugit repellat
+            odit commodi nam, deleniti dolorum nulla perferendis, non mollitia aliquid debitis suscipit dolore sapiente ullam possimus ut? Atque aspernatur, necessitatibus temporibus laboriosam harum soluta reprehenderit officiis assumenda, non quia quidem,
+            mollitia qui dicta? Fugiat quae itaque eveniet rerum, voluptatibus incidunt voluptatem, tempore delectus, explicabo qui a veniam quibusdam in eum culpa. Tempore consequatur omnis rerum nulla, debitis facere, ipsum porro voluptas architecto
+            labore totam, dolores eligendi laborum eaque maxime in dignissimos. Qui nobis nemo illo ad mollitia aliquid quod molestias, quia nam voluptate labore fuga asperiores quis explicabo eveniet. Nulla laborum consequatur delectus a fugiat labore
+            rem, nihil cum earum? Reiciendis, consectetur repellat temporibus dolorum culpa autem at odit totam aut laborum dignissimos voluptatem? Ducimus, natus at tenetur tempora quis sint amet odit recusandae similique consectetur voluptates temporibus,
+            corrupti fuga mollitia commodi, qui perspiciatis quibusdam esse expedita omnis inventore! A, qui. Minima beatae nesciunt commodi unde repellat velit voluptates, nisi doloribus, perspiciatis provident sint voluptatem voluptate ipsa incidunt
+            aliquid corporis. Iusto minima at delectus quibusdam libero sint. Distinctio doloribus fuga, sequi sed ratione dolorum illum in eaque impedit architecto numquam suscipit est corrupti labore quisquam reprehenderit id recusandae quis iusto blanditiis
+            ipsa. Enim eaque aspernatur sit sed, officia, veniam eos debitis quisquam iusto, laboriosam assumenda! Magni laborum quibusdam sit accusantium qui ea voluptas cum earum at nisi, odio voluptates tempora minus velit quidem assumenda ipsam neque?
+            A vero reiciendis nostrum assumenda repudiandae dolore nisi distinctio laborum ipsa iure natus, quae voluptates corporis, id incidunt omnis doloremque ea, eveniet iusto commodi minus quod reprehenderit? Sint soluta suscipit, assumenda ex eveniet
+            quas ab amet corrupti, cumque exercitationem qui quidem. Hic ex explicabo cumque qui perferendis temporibus! Inventore magni pariatur, laudantium culpa hic voluptatum ipsam minima. Tempora voluptatem aut esse optio aperiam ad sapiente ipsam
+            doloribus soluta! Velit consectetur ipsum excepturi fugit, quod adipisci culpa quam quae quis repellat sapiente ratione exercitationem eius sequi officia ad, architecto, pariatur eveniet suscipit impedit corrupti recusandae praesentium saepe?
+            Laboriosam voluptatibus fuga animi. Officia, in necessitatibus. Quisquam quos eius molestias veniam facilis reiciendis iusto temporibus labore nemo quis est ipsa laboriosam dignissimos nesciunt velit officiis vel quia fugiat repudiandae nulla,
+            porro saepe doloribus aliquam. Tempora totam incidunt error repudiandae iure commodi veritatis ipsa dolores vitae corporis consequuntur non exercitationem, voluptatibus maiores vero distinctio. Rem, veniam. Nostrum sunt dolores error, id eum
+            non laboriosam accusamus, ducimus quae quaerat sint, eaque delectus aliquid quia dolore? Quibusdam doloremque quasi esse debitis ad ipsa illum a dolore fugit laborum error dicta voluptate consectetur numquam ea dolorem quod quidem, provident
+            officia consequatur animi. Iure quaerat consequuntur vitae error repudiandae eius adipisci. Dolores excepturi id quisquam itaque molestias! Nesciunt minima, ipsum voluptates, ducimus asperiores nulla vitae iusto illum voluptas laudantium,
+            corrupti sunt reprehenderit natus odit adipisci iste consequatur blanditiis eius quo. Doloremque molestias expedita asperiores praesentium incidunt quisquam in maxime quaerat facilis voluptas. Voluptate iste voluptas accusamus eum quisquam
+            eos aliquam exercitationem ducimus voluptatibus maxime totam nobis enim velit consequuntur iure, molestias, suscipit vitae error recusandae culpa sint soluta, molestiae tenetur. Possimus a laborum reiciendis ratione, quam ducimus rerum voluptates
+            eius sint omnis, unde dignissimos alias placeat et, hic aperiam soluta id suscipit illum at. Quam similique, maiores voluptatibus magnam consequatur vitae laudantium minima repudiandae rerum, expedita optio laborum totam nostrum recusandae
+            possimus modi repellendus quasi velit? Nostrum, quas aperiam. Amet minus tempora delectus deleniti reiciendis nam at, repudiandae odit necessitatibus quibusdam unde. Distinctio recusandae, corrupti incidunt omnis aperiam officiis id sed aliquam,
+            corporis enim temporibus magni quo asperiores placeat adipisci consectetur officia, modi magnam! Distinctio veritatis ea, quas totam blanditiis laboriosam. Pariatur aliquid nam aut fugit quisquam molestiae repudiandae facere a, eaque laborum
+            quibusdam hic sit consequatur temporibus minus aliquam ab similique debitis animi! Saepe, id numquam, a in ipsam nam perspiciatis sint tenetur voluptatibus praesentium ratione veniam? Non error quod, et modi delectus veniam consectetur voluptatem
+            porro excepturi eveniet accusantium explicabo magnam, cupiditate in? Dignissimos necessitatibus expedita non, quaerat accusantium enim laborum voluptate a dolorum atque cupiditate, quam velit sequi animi laboriosam, quos eos. Quas accusantium
+            quod inventore. Rerum libero esse distinctio doloribus nesciunt nobis amet ipsa autem eaque earum voluptates necessitatibus est hic excepturi quis rem officiis cum, quod provident temporibus dolorum porro impedit veritatis optio. Animi error
+            saepe, sunt facilis sint, similique consequuntur repudiandae, esse ab molestias perferendis. Esse illo harum ducimus optio labore. Commodi culpa dolorem quas sit aperiam dolor earum sequi veritatis perspiciatis. Est vitae quidem laboriosam
+            earum voluptatum aut nobis ipsa, accusantium illo, qui amet animi quia ullam optio consectetur officiis numquam, consequatur odio! Tempore fugit cupiditate temporibus autem corrupti, praesentium delectus. Quisquam nesciunt alias aut a nemo
+            dolore molestiae sint, modi ratione neque consequatur excepturi natus quas! Fuga, ut magnam? Optio veritatis quidem molestiae dignissimos consequuntur itaque ab sit temporibus explicabo animi? Doloribus in id provident temporibus, fugiat quas
+            inventore error sequi aliquam numquam velit! Libero neque sit cumque nihil assumenda voluptas incidunt, odit reprehenderit temporibus aperiam necessitatibus obcaecati accusamus molestias beatae eos ipsam illo iusto. Voluptates dolorem, sequi
+            ratione maxime aspernatur reiciendis delen Enim eaque aspernatur sit sed, officia, veniam eos debitis quisquam iusto, laboriosam assumenda! Magni laborum quibusdam sit accusantium qui ea voluptas cum earum at nisi, odio voluptates tempora
+            minus velit quidem assumenda ipsam neque? A vero reiciendis nostrum assumenda repudiandae dolore nisi distinctio laborum ipsa iure natus, quae voluptates corporis, id incidunt omnis doloremque ea, eveniet iusto commodi minus quod reprehenderit?
+            Sint soluta suscipit, assumenda ex eveniet quas ab amet corrupti, cumque exercitationem qui quidem. Hic ex explicabo cumque qui perferendis temporibus! Inventore magni pariatur, laudantium culpa hic voluptatum ipsam minima. Tempora voluptatem
+            aut esse optio aperiam ad sapiente ipsam doloribus soluta! Velit consectetur ipsum excepturi fugit, quod adipisci culpa quam quae quis repellat sapiente ratione exercitationem eius sequi officia ad, architecto, pariatur eveniet suscipit impedit
+            corrupti recusandae praesentium saepe? Laboriosam voluptatibus fuga animi. Officia, in necessitatibus. Quisquam quos eius molestias veniam facilis reiciendis iusto temporibus labore nemo quis est ipsa laboriosam dignissimos nesciunt velit
+            officiis vel quia fugiat repudiandae nulla, porro saepe doloribus aliquam. Tempora totam incidunt error repudiandae iure commodi veritatis ipsa dolores vitae corporis consequuntur non exercitationem, voluptatibus maiores vero distinctio. Rem,
+            veniam. Nostrum sunt dolores error, id eum non laboriosam accusamus, ducimus quae quaerat sint, eaque delectus aliquid quia dolore? Quibusdam doloremque quasi esse debitis ad ipsa illum a dolore fugit laborum error dicta voluptate consectetur
+            numquam ea dolorem quod quidem, provident officia consequatur animi. Iure quaerat consequuntur vitae error repudiandae eius adipisci. Dolores excepturi id quisquam itaque molestias! Nesciunt minima, ipsum voluptates, ducimus asperiores nulla
+            vitae iusto illum voluptas laudantium, corrupti sunt reprehenderit natus odit adipisci iste consequatur blanditiis eius quo. Doloremque molestias expedita asperiores praesentium incidunt quisquam in maxime quaerat facilis voluptas. Voluptate
+            iste voluptas accusamus eum quisquam eos aliquam exercitationem ducimus voluptatibus maxime totam nobis enim velit consequuntur iure, molestias, suscipit vitae error recusandae culpa sint soluta, molestiae tenetur. Possimus a laborum reiciendis
+            ratione, quam ducimus rerum voluptates eius sint omnis, unde dignissimos alias placeat et, hic aperiam soluta id suscipit illum at. Quam similique, maiores voluptatibus magnam consequatur vitae laudantium minima repudiandae rerum, expedita
+            optio laborum totam nostrum recusandae possimus modi repellendus quasi velit? Nostrum, quas aperiam. Amet minus tempora delectus deleniti reiciendis nam at, repudiandae odit necessitatibus quibusdam unde. Distinctio recusandae, corrupti incidunt
+            omnis aperiam officiis id sed aliquam, corporis enim temporibus magni quo asperiores placeat adipisci consectetur officia, modi magnam! Distinctio veritatis ea, quas totam blanditiis laboriosam. Pariatur aliquid nam aut fugit quisquam molestiae
+            repudiandae facere a, eaque laborum quibusdam hic sit consequatur temporibus minus aliquam ab similique debitis animi! Saepe, id numquam, a in ipsam nam perspiciatis sint tenetur voluptatibus praesentium ratione veniam? Non error quod, et
+            modi delectus veniam consectetur voluptatem porro excepturi eveniet accusantium explicabo magnam, cupiditate in? Dignissimos necessitatibus expedita non, quaerat accusantium enim laborum voluptate a dolorum atque cupiditate, quam velit sequi
+            animi laboriosam, quos eos. Quas accusantium quod inventore. Rerum libero esse distinctio doloribus nesciunt nobis amet ipsa autem eaque earum voluptates necessitatibus est hic excepturi quis rem officiis cum, quod provident temporibus dolorum
+            porro impedit veritatis optio. Animi error saepe, sunt facilis sint, similique consequuntur repudiandae, esse ab molestias perferendis. Esse illo harum ducimus optio labore. Commodi culpa dolorem quas sit aperiam dolor earum sequi veritatis
+            perspiciatis. Est vitae quidem laboriosam earum voluptatum aut nobis ipsa, accusantium illo, qui amet animi quia ullam optio consectetur officiis numquam, consequatur odio! Tempore fugit cupiditate temporibus autem corrupti, praesentium delectus.
+            Quisquam nesciunt alias aut a nemo dolore molestiae sint, modi ratione neque consequatur excepturi natus quas! Fuga, ut magnam? Optio veritatis quidem molestiae dignissimos consequuntur itaque ab sit temporibus explicabo animi? Doloribus in
+            id provident temporibus, fugiat quas inventore error sequi aliquam numquam velit! Libero neque sit cumque nihil assumenda voluptas incidunt, odit reprehenderit temporibus aperiam necessitatibus obcaecati accusamus molestias beatae eos ipsam
+            illo iusto. Voluptates dolorem, sequi ratione maxime aspernatur reiciendis delen Enim eaque aspernatur sit sed, officia, veniam eos debitis quisquam iusto, laboriosam assumenda! Magni laborum quibusdam sit accusantium qui ea voluptas cum earum
+            at nisi, odio voluptates tempora minus velit quidem assumenda ipsam neque? A vero reiciendis nostrum assumenda repudiandae dolore nisi distinctio laborum ipsa iure natus, quae voluptates corporis, id incidunt omnis doloremque ea, eveniet iusto
+            commodi minus quod reprehenderit? Sint soluta suscipit, assumenda ex eveniet quas ab amet corrupti, cumque exercitationem qui quidem. Hic ex explicabo cumque qui perferendis temporibus! Inventore magni pariatur, laudantium culpa hic voluptatum
+            ipsam minima. Tempora voluptatem aut esse optio aperiam ad sapiente ipsam doloribus soluta! Velit consectetur ipsum excepturi fugit, quod adipisci culpa quam quae quis repellat sapiente ratione exercitationem eius sequi officia ad, architecto,
+            pariatur eveniet suscipit impedit corrupti recusandae praesentium saepe? Laboriosam voluptatibus fuga animi. Officia, in necessitatibus. Quisquam quos eius molestias veniam facilis reiciendis iusto temporibus labore nemo quis est ipsa laboriosam
+            dignissimos nesciunt velit officiis vel quia fugiat repudiandae nulla, porro saepe doloribus aliquam. Tempora totam incidunt error repudiandae iure commodi veritatis ipsa dolores vitae corporis consequuntur non exercitationem, voluptatibus
+            maiores vero distinctio. Rem, veniam. Nostrum sunt dolores error, id eum non laboriosam accusamus, ducimus quae quaerat sint, eaque delectus aliquid quia dolore? Quibusdam doloremque quasi esse debitis ad ipsa illum a dolore fugit laborum
+            error dicta voluptate consectetur numquam ea dolorem quod quidem, provident officia consequatur animi. Iure quaerat consequuntur vitae error repudiandae eius adipisci. Dolores excepturi id quisquam itaque molestias! Nesciunt minima, ipsum
+            voluptates, ducimus asperiores nulla vitae iusto illum voluptas laudantium, corrupti sunt reprehenderit natus odit adipisci iste consequatur blanditiis eius quo. Doloremque molestias expedita asperiores praesentium incidunt quisquam in maxime
+            quaerat facilis voluptas. Voluptate iste voluptas accusamus eum quisquam eos aliquam exercitationem ducimus voluptatibus maxime totam nobis enim velit consequuntur iure, molestias, suscipit vitae error recusandae culpa sint soluta, molestiae
+            tenetur. Possimus a laborum reiciendis ratione, quam ducimus rerum voluptates eius sint omnis, unde dignissimos alias placeat et, hic aperiam soluta id suscipit illum at. Quam similique, maiores voluptatibus magnam consequatur vitae laudantium
+            minima repudiandae rerum, expedita optio laborum totam nostrum recusandae possimus modi repellendus quasi velit? Nostrum, quas aperiam. Amet minus tempora delectus deleniti reiciendis nam at, repudiandae odit necessitatibus quibusdam unde.
+            Distinctio recusandae, corrupti incidunt omnis aperiam officiis id sed aliquam, corporis enim temporibus magni quo asperiores placeat adipisci consectetur officia, modi magnam! Distinctio veritatis ea, quas totam blanditiis laboriosam. Pariatur
+            aliquid nam aut fugit quisquam molestiae repudiandae facere a, eaque laborum quibusdam hic sit consequatur temporibus minus aliquam ab similique debitis animi! Saepe, id numquam, a in ipsam nam perspiciatis sint tenetur voluptatibus praesentium
+            ratione veniam? Non error quod, et modi delectus veniam consectetur voluptatem porro excepturi eveniet accusantium explicabo magnam, cupiditate in? Dignissimos necessitatibus expedita non, quaerat accusantium enim laborum voluptate a dolorum
+            atque cupiditate, quam velit sequi animi laboriosam, quos eos. Quas accusantium quod inventore. Rerum libero esse distinctio doloribus nesciunt nobis amet ipsa autem eaque earum voluptates necessitatibus est hic excepturi quis rem officiis
+            cum, quod provident temporibus dolorum porro impedit veritatis optio. Animi error saepe, sunt facilis sint, similique consequuntur repudiandae, esse ab molestias perferendis. Esse illo harum ducimus optio labore. Commodi culpa dolorem quas
+            sit aperiam dolor earum sequi veritatis perspiciatis. Est vitae quidem laboriosam earum voluptatum aut nobis ipsa, accusantium illo, qui amet animi quia ullam optio consectetur officiis numquam, consequatur odio! Tempore fugit cupiditate temporibus
+            autem corrupti, praesentium delectus. Quisquam nesciunt alias aut a nemo dolore molestiae sint, modi ratione neque consequatur excepturi natus quas! Fuga, ut magnam? Optio veritatis quidem molestiae dignissimos consequuntur itaque ab sit temporibus
+            explicabo animi? Doloribus in id provident temporibus, fugiat quas inventore error sequi aliquam numquam velit! Libero neque sit cumque nihil assumenda voluptas incidunt, odit reprehenderit temporibus aperiam necessitatibus obcaecati accusamus
+            molestias beatae eos ipsam illo iusto. Voluptates dolorem, sequi ratione maxime aspernatur reiciendis deleniti minima laboriosam voluptatum possimus quibusdam, atque vitae. Atque optio deleniti, animi cum nobis eveniet minus magnam sit sequi
+            neque libero. Vitae cupiditate in sunt eius incidunt dolorem corporis error natus, sint quae sit numquam, exercitationem, magnam provident et impedit harum possimus perferendis. Ex, veritatis. Veniam maxime, dolor architecto ratione laboriosam
+            atque qui perferendis voluptatem recusandae minima quis rerum debitis harum cum modi iste magnam. A repellat ullam, velit officia dicta accusantium, nisi itaque molestiae perspiciatis veniam minus ut quibusdam nostrum, quasi totam voluptate
+            blanditiis quis et maiores fuga sapiente porro ad! Molestiae sint officiis, qui et suscipit ullam hic quia quae, consequatur veritatis est veniam debitis optio a blanditiis explicabo esse ex! Corporis quos ipsa illum nihil deserunt ad architecto
+            sint maiores temporibus nobis facere delectus atque sit reiciendis ullam voluptatum, harum rerum odit facilis modi sunt cupiditate. Fugit atque esse nihil eos nostrum deleniti repudiandae, adipisci incidunt qui vel error voluptate ratione,
+            sed ut consectetur tempora itaque reprehenderit commodi unde, autem corporis quam expedita sint? Nemo, temporibus impedit incidunt ipsa sed ullam rem maxime dolorum perferendis voluptas? Enim beatae nemo recusandae animi asperiores et fugiat.
+            Fuga id incidunt, illum a saepe quo labore consequuntur accusantium minima inventore excepturi molestias sunt ex ipsam cumque ullam ea sequi quisquam suscipit officia corporis eos. Similique, dicta mollitia dolorum, veritatis atque iusto asperiores
+            voluptatum adipisci molestias doloremque, voluptas voluptates at earum?
+        </p> -->
+    </main>
+
+
+    <!--==========================================================================-->
+    <!--========================= Java Script Start  ============================-->
+    <!--=========================================================================-->
+    <script>
+    </script>
+    <!--=========================================================================-->
+    <!--========================= Java Script End  ============================-->
+    <!--=========================================================================-->
+
+    </body2>
+
+</html>
